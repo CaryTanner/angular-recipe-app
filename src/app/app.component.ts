@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'firstApp';
+
+  isRecipeShown: boolean = true
+
+  title = 'secondApp';
+
+
+  onSwitchLink(trueFalse: boolean){
+    this.isRecipeShown = trueFalse
+  }
+
+
+
+
 }
