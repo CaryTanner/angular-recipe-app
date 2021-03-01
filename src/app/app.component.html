@@ -1,9 +1,9 @@
-<app-header (showRecipes)="onSwitchLink($event)"></app-header>
+<app-header ></app-header>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes *ngIf="isRecipeShown"></app-recipes>
-            <app-shopping-list *ngIf="!isRecipeShown"></app-shopping-list>
+            <router-outlet></router-outlet>
+            
         </div>
     </div>
 </div>

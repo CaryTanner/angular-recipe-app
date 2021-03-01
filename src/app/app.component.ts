@@ -7,14 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  isRecipeShown: boolean = true
+  
 
   title = 'secondApp';
 
 
-  onSwitchLink(trueFalse: boolean){
-    this.isRecipeShown = trueFalse
-  }
+  
 
 
 
