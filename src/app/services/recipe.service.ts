@@ -1,4 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from 'src/models/ingredient.model';
 
 import { Recipe } from 'src/models/recipe.model';
@@ -31,7 +32,7 @@ export class RecipeService {
     ),
   ];
 
-  selectedRecipe: EventEmitter<Recipe> = new EventEmitter<Recipe>();
+  selectedRecipe = new Subject<Recipe>();
 
   getRecipes() {
     return this.recipes.slice();
