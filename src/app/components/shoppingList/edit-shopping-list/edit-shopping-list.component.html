@@ -1,24 +1,26 @@
 <div class="row">
   <div class="col-xs-12">
     <form action="">
-      <div class="row">
+
+      <form class="row" [formGroup]="ingForm" >
         <div class="col-sm-8 form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name"  #nameInput/>
+          <input type="text" class="form-control" id="name" formControlName="name" />
         </div>
         <div class="col-sm-4 form-group">
           <label for="amount">Amount</label>
-          <input type="number" class="form-control" id="amount" #amountInput/>
+          <input type="number" class="form-control" id="amount" formControlName="amount" />
         </div>
         
-      </div>
+      </form>
       <div class="row">
         <div class="col-sm-12 ">
-            <button class="btn btn-success mr-2" type="submit" (click)="addIngredient()">Add</button>
-            <button class="btn btn-danger mr-2" type="button">Delete</button>
-            <button class="btn btn-primary" type="submit">Clear</button>
+            <button class="btn btn-success mr-2" type="submit" (click)="addIngredient()" [disabled]="ingForm.invalid">{{editMode ? 'Update': 'Add New'}}</button>
+            <button class="btn btn-danger mr-2" type="button" (click)="deleteItem()" [disabled]="!editMode">Delete</button>
+            <button class="btn btn-primary" type="submit" (click)="clearForm()">Clear</button>
         </div>
       </div>
+
     </form>
   </div>
 </div>

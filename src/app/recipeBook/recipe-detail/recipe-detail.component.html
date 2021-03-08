@@ -19,7 +19,7 @@
             <ul  [ngClass]="{'show':r.isOpen}" class="dropdown-menu">
                 <li (click)="addToShoppingList()"><a >To Shopping List</a></li>
                 <li><a [routerLink]="['/recipes', this.id, 'edit' ]">Edit Recipe</a></li>
-                <li><a>Delete Recipe</a></li>
+                <li style="cursor: pointer;"(click)="onDelete()"><a>Delete Recipe</a></li>
             </ul>
         </div>
 

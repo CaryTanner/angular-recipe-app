@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HeaderComponent} from './components/header.component'
 import { ShoppingListComponent } from './components/shoppingList/shopping-list/shopping-list.component';
 import { EditShoppingListComponent } from './components/shoppingList/edit-shopping-list/edit-shopping-list.component';
@@ -31,11 +31,13 @@ import { RecipeStawrtComponent } from './recipe-stawrt/recipe-stawrt.component';
     RecipeEditComponent,
     NotFoundComponent,
     RecipeStawrtComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

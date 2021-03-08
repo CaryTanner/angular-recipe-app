@@ -33,6 +33,7 @@ export class RecipeService {
   ];
 
   selectedRecipe = new Subject<Recipe>();
+  recipechange = new Subject<Recipe[]>()
 
   getRecipes() {
     return this.recipes.slice();
@@ -40,6 +41,22 @@ export class RecipeService {
 
   getRecipeById(id: number): Recipe{
       return this.recipes[id]
+  }
+
+  addRecipe(recipe: Recipe){
+    this.recipes = [...this.recipes, recipe]
+    this.recipechange.next(this.getRecipes())
+  }
+
+  updateRecipe(index: number, recipe: Recipe){
+      this.recipes[index] = recipe
+      this.recipechange.next(this.getRecipes())
+  }
+
+  deleteRecipe(index){
+    this.recipes.splice(index, 1)
+    this.recipechange.next(this.getRecipes())
+    
   }
 
 }
